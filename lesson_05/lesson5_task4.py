@@ -8,7 +8,7 @@ username = driver.find_element(By.CSS_SELECTOR,'#username')
 username.send_keys('tomsmith')
 password = driver.find_element(By.CSS_SELECTOR,'#password')
 password.send_keys('SuperSecretPassword!')
-driver.find_element(By.CSS_SELECTOR,'#login > button > i').click()
+driver.find_element(By.CSS_SELECTOR,'#login i').click()
 print(driver.find_element(By.ID,'flash').text)
 quit()
 
