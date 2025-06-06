@@ -2,9 +2,9 @@ import YourGile
 url = 'https://yougile.com/api-v2/'
 
 #впишите в эти переменные данные, которые я кинула
-my_login = "pulnovaalisa@yandex.ru"
-my_password = "test2password228"
-my_company_id = "0f00c838-a634-49fc-ac15-94aaf702dda0"
+my_login = ""
+my_password = ""
+my_company_id = ""
 
 #регистрация
 authorization = YourGile.Authorization(url)
