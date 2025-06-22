@@ -20,15 +20,15 @@ driver2 = webdriver.Firefox()
 @allure.severity(Severity.CRITICAL)
 def test():
     with allure.step('Авторизация пользователя'):
-        step1 = Authorization(driver2)
+        Authorization(driver2)
     with allure.step('Добавление вещей в корзину'):
-        step2 = MainPage(driver2).add_things()
+        MainPage(driver2).add_things()
     with allure.step('Проверка содержимого корзины'):
-        step3 = CartPage(driver2).checkout()
+        CartPage(driver2).checkout()
     with allure.step('Заполнение контактной информации для заказа'):
-        step4 = Information(driver2).input_data()
+        result = Information(driver2).input_data()
+    assert result == 'Total: $58.29'
     driver2.quit()
-    assert step4 == 'Total: $58.29'
 
 
 @allure.title('Работа калькулятора')
@@ -41,3 +41,4 @@ def test_calc_time():
         result.send_values(45)
         result.time(45)
     assert result.time(45) == True
+    driver2.quit()
